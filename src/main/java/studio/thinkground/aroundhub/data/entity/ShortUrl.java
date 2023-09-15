@@ -22,7 +22,7 @@ import lombok.Setter;
 public class ShortUrl extends BaseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // index번호를 자동으로 가져온다 (auto_increment)
     private Long id;
 
     @Column(nullable = false, unique = true)

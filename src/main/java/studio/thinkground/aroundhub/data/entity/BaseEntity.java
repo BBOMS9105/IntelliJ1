@@ -25,19 +25,24 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @EntityListeners(AuditingEntityListener.class)
 public class BaseEntity {
 
+    // @CreatedDate : Entity가 생성되어 저장될 때 시간이 자동 저장된다.
     @CreatedDate
+    // updatable = false : 생성일은 한 번 저장되면 변경되지 않는다.
     @Column(updatable = false)
     private LocalDateTime createdAt;
 
+    // @CreatedBy : Entity가 생성되어 저장될 때 저장 주체를 자동 저장한다.
   /*
   @CreatedBy
   @Column(updatable = false)
   private String createdBy;
   */
 
+    // @LastModifiedDate : Entity의 값을 변경할 때 시간이 자동 저장된다.
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
+    // @LastModifiedBy : Entity의 값을 변경할 때 변경한 주체를 자동 저장한다.
   /*
   @LastModifiedBy
   private String updatedBy;
